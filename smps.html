@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>High-Power Switch-Mode Power Supply – Hutton Mann Shaw</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+
+    :root {
+      --bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --border-soft: #eaecf0;
+      --text: #111827;
+      --muted: #6b7280;
+      --muted-light: #9ca3af;
+      --accent: #111827;
+      --radius-lg: 16px;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      letter-spacing: -0.01em;
+    }
+
+    .page {
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .shell {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 2.3rem 2.2rem 2.3rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted-light);
+      margin-bottom: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .back-link span.arrow {
+      font-size: 0.9rem;
+    }
+
+    .title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted-light);
+      margin-bottom: 1.4rem;
+    }
+
+    .summary {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted-light);
+      margin: 1.6rem 0 0.7rem;
+    }
+
+    .body-text {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .featured-image img {
+      width: 100%;
+      max-height: auto;     /* bigger than gallery */
+      object-fit: contain;
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      margin: 1.2rem 0 0.4rem;
+      clip-path: inset(5px round 14px);
+    }
+
+    .featured-caption {
+      font-size: 0.8rem;
+      color: var(--muted-light);
+      margin-bottom: 1.4rem;
+    }
+
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border-soft);
+      object-fit: cover;
+      max-height: 260px;
+    }
+
+    .gallery-caption {
+      font-size: 0.75rem;
+      color: var(--muted-light);
+      margin-top: 0.25rem;
+    }
+
+    .meta-list {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .meta-list span.label {
+      color: var(--muted-light);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.72rem;
+      margin-right: 0.3rem;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 1.5rem 0.8rem 2.2rem;
+      }
+
+      .shell {
+        padding: 1.8rem 1.5rem 2rem;
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <article class="shell">
+      <a class="back-link" href="index.html">
+        <span class="arrow">←</span>
+        <span>Back to projects</span>
+      </a>
+
+      <h1 class="title">High Power Switch-Mode Power Supply</h1>
+      <div class="meta">
+        Personal project · 0–20 A @ 24 VDC
+      </div>
+
+      <p class="summary">
+        A high-power switch-mode power supply capable of delivering up to 20 A at a regulated
+        24 VDC output. I designed the full system, including the high-frequency power stage,
+        transformer, feedback loop, protection circuitry, and mechanical packaging. The goal
+        was to build something closer to an industrial supply than a simple bench supply, with
+        proper filtering, efficiency, and repeatable performance across a wide range of loads.
+      </p>
+
+      <div class="featured-image">
+        <img src="images/smps-thumb.jpg" alt="High-power SMPS full view" />
+        <div class="featured-caption">Full view of the SMPS during assembly.</div>
+      </div>
+
+
+      <div class="meta-list">
+        <span class="label">TECH:</span>
+        SMPS topologies, MOSFET switching, transformer design and winding,
+        constant voltage current source, thermal management and enclosure design
+      </div>
+
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery">
+        <div>
+          <img src="images/smps3.jpg" alt="Hand-wound Transformer" />
+          <div class="gallery-caption">Hand-wound high-frequency transformer with ferrite core + 22 AWG enameled copper wire.</div>
+        </div>
+        <div>
+          <img src="images/smps4.jpeg" alt="SMPS PCB layout" />
+          <div class="gallery-caption">PCB layout focusing on high-current paths and switching node routing.</div>
+        </div>
+        <div>
+          <img src="images/smps2.jpg" alt="SMPS Outer View" />
+          <div class="gallery-caption">Amazon purchased metal enclosure; fully grounded :)</div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Description</h2>
+      <p class="body-text">
+        I started by defining the electrical requirements: 24 V regulated output, 0–20 A load range,
+        acceptable ripple, and rough efficiency targets. From there I selected an appropriate
+        switch-mode topology and designed the power stage around high-current MOSFETs and a custom
+        transformer, which I wound and characterized myself.
+        <br /><br />
+        On the analog side, I designed the feedback network, overcurrent protection,
+        and input/output filtering to keep noise under control.
+        <br /><br />
+        Mechanically, I laid out the PCB to separate noisy switching regions from sensitive feedback
+        traces, paid attention to creepage/clearance, and integrated the board into an enclosure with
+        proper airflow and access to measurement points.
+      </p>
+    </article>
+  </div>
+</body>
+</html>

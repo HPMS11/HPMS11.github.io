@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Homebrew 4-Bit Computer – Hutton Mann Shaw</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+
+    :root {
+      --bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --border-soft: #eaecf0;
+      --text: #111827;
+      --muted: #6b7280;
+      --muted-light: #9ca3af;
+      --accent: #111827;
+      --radius-lg: 16px;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      letter-spacing: -0.01em;
+    }
+
+    .page {
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .shell {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 2.3rem 2.2rem 2.3rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted-light);
+      margin-bottom: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .back-link span.arrow {
+      font-size: 0.9rem;
+    }
+
+    .title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted-light);
+      margin-bottom: 1.4rem;
+    }
+
+    .summary {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted-light);
+      margin: 1.6rem 0 0.7rem;
+    }
+
+    .body-text {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      border: none;
+      object-fit: cover;
+      max-height: 295px;
+    }
+
+    .clip-edge {
+      clip-path: inset(4px round 12px);
+    }
+
+
+    .gallery-caption {
+      font-size: 0.75rem;
+      color: var(--muted-light);
+      margin-top: 0.25rem;
+    }
+
+    .meta-list {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .meta-list span.label {
+      color: var(--muted-light);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.72rem;
+      margin-right: 0.3rem;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 1.5rem 0.8rem 2.2rem;
+      }
+
+      .shell {
+        padding: 1.8rem 1.5rem 2rem;
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <article class="shell">
+      <a class="back-link" href="index.html">
+        <span class="arrow">←</span>
+        <span>Back to projects</span>
+      </a>
+
+      <h1 class="title">Homebrew 4-Bit Computer</h1>
+      <div class="meta">
+        Personal project · TTL Processor
+      </div>
+
+      <p class="summary">
+        A minimalist 4-bit computer constructed from off-the-shelf TTL logic chips.
+        It has a 4-bit program counter, basic arithmetic and logic, and a very small
+        instruction set. The goal was to make the data path and control signals visible,
+        so you can literally see computation happening on the LEDs and buses.
+      </p>
+
+      <div class="meta-list">
+        <span class="label">TECH:</span>
+        74xx TTL logic ICs, registers and counters, clock generation and debouncing, RISC processor design
+      </div>
+
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery">
+        <div>
+          <img class="clip-edge" src="images/4_bit_computer-thumb.jpg" alt="Overall 4-bit computer build" />
+          <div class="gallery-caption">Full Build.</div>
+        </div>
+        <div>
+          <img class="clip-edge" img src="images/4_bit_computer4.jpg" alt="clock and control" />
+          <div class="gallery-caption">Clock and control.</div>
+        </div>
+        <div>
+          <img src="images/4_bit_computer3.png" alt="processor flow diagram" />
+          <div class="gallery-caption"> Processor Design Diagram. Credit: David Feinberg.</div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Description</h2>
+      <p class="body-text">
+        The architecture is designed around a simple 4-bit datapath: registers, an ALU,
+        a program counter, and basic control logic to sequence instructions. I implemented
+        the building blocks using 74xx-series TTL chips.
+        <br /><br />
+        On the control side, I designed a small instruction set and created the state
+        machine needed to fetch, decode, and execute each instruction over several
+        clock cycles. I also built a simple clock source that can be run in single-step
+        mode for debugging or free-run mode to watch programs execute.
+        <br /><br />
+        The project gave me a concrete feel for what’s normally abstracted away by
+        microcontrollers!
+      </p>
+
+    </article>
+  </div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chem-E-Car Electrical System – Hutton Mann Shaw</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+
+    :root {
+      --bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --border-soft: #eaecf0;
+      --text: #111827;
+      --muted: #6b7280;
+      --muted-light: #9ca3af;
+      --accent: #111827;
+      --radius-lg: 16px;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      letter-spacing: -0.01em;
+    }
+
+    .page {
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .shell {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 2.3rem 2.2rem 2.3rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted-light);
+      margin-bottom: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .back-link span.arrow {
+      font-size: 0.9rem;
+    }
+
+    .title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted-light);
+      margin-bottom: 1.4rem;
+    }
+
+    .summary {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted-light);
+      margin: 1.6rem 0 0.7rem;
+    }
+
+    .body-text {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border-soft);
+      object-fit: cover;
+      max-height: 260px;
+    }
+
+    .gallery-caption {
+      font-size: 0.75rem;
+      color: var(--muted-light);
+      margin-top: 0.25rem;
+    }
+
+    .meta-list {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .meta-list span.label {
+      color: var(--muted-light);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.72rem;
+      margin-right: 0.3rem;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 1.5rem 0.8rem 2.2rem;
+      }
+
+      .shell {
+        padding: 1.8rem 1.5rem 2rem;
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <article class="shell">
+      <a class="back-link" href="index.html">
+        <span class="arrow">←</span>
+        <span>Back to projects</span>
+      </a>
+
+      <h1 class="title">Chem-E Car Electrical System</h1>
+      <div class="meta">
+        2023 – present · Electrical Member -> Financial officer -> Electrical Lead · McGill Chem-E Car Design Team
+      </div>
+
+      <p class="summary">
+        I lead the design of the full electrical stack for a shoebox-sized Chem-E Car
+        powered entirely by chemical reactions. The system includes custom PCBs for
+        power regulation, motor control, management of our homemade battery, and sensor interfaces that
+        monitor reaction and car movement to precisely stop the car at the target line.
+      </p>
+
+      <div class="meta-list">
+        <span class="label">TECH:</span>
+        Rapsberry Pi/Arduino, battery management (state of charge estimation),
+        Eagle/Easy-EDA PCB design, LTSpice simulation, Embedded comms (SPI, I2C), Python, Image processing
+      </div>
+
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery">
+        <div>
+          <img src="images/chemecar5.png" alt="this year's 1st PCB prototype" />
+          <div class="gallery-caption">Early prototype for this year's car.</div>
+        </div>
+        <div>
+          <img src="images/chemecar3.jpg" alt="Last year's fully assembled car!" />
+          <div class="gallery-caption">Last year's fully assembled car!</div>
+        </div>
+        <div>
+          <img src="images/chemecar4.jpg" alt="team shot" />
+          <div class="gallery-caption">Some of the team :)</div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Description</h2>
+      <p class="body-text">
+        This year, the hardare design includes the PCBs, wiring, and sensors that drive the two motors, read the
+        car’s speed, monitor the battery’s voltage and current, record live camera data, and measure the oxidation reduction
+        potential (ORP) of our stopping reaction. The design of this system invloves Spice modelling, and tons of iterative prototyping to 
+        ensure steady power distribution from our homemade battery, and low-noise high integrity signal reading and writing to motors and sensors.
+        <br /><br />
+        On the software side, using SPI and I²C comms, we write the embedded code that collects data from all sensors and writes to all outputs.
+        Using the live measurements, we model battery behaviour to estimate state of charge,
+        and use both the ORP and image data to build a stopping algorithm. This brings the whole car together!
+        <br /><br />
+        While the end goal stays constant year to year, the change in battery chemistry, mechanical design, stopping reaction, and increased ambition
+        of the team proves to be electrically challenging in a new way each competition. From an electrical standpoint--this being a competition where precision 
+        is everything--I try to push my design each year to build a more measured, mathematical, and robust car. 
+      </p>
+    </article>
+  </div>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Soldering Station – Hutton Mann Shaw</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+
+    :root {
+      --bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --border-soft: #eaecf0;
+      --text: #111827;
+      --muted: #6b7280;
+      --muted-light: #9ca3af;
+      --accent: #111827;
+      --radius-lg: 16px;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      letter-spacing: -0.01em;
+    }
+
+    .page {
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .shell {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 2.3rem 2.2rem 2.3rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted-light);
+      margin-bottom: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .back-link span.arrow {
+      font-size: 0.9rem;
+    }
+
+    .title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted-light);
+      margin-bottom: 1.4rem;
+    }
+
+    .summary {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted-light);
+      margin: 1.6rem 0 0.7rem;
+    }
+
+    .body-text {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      border: none;
+      clip-path: inset(4px round 12px);
+      object-fit: cover;
+      max-height: 260px;
+    }
+
+    /* full-width item inside the grid */
+    .gallery-full {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-full img {
+      max-height: 220px;      /* shorter so it doesn’t dominate */
+      object-fit: contain;    /* show full iron without cropping */
+      clip-path: inset(4px round 12px);
+    }
+
+    .gallery-caption {
+      font-size: 0.75rem;
+      color: var(--muted-light);
+      margin-top: 0.25rem;
+    }
+
+    .meta-list {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .meta-list span.label {
+      color: var(--muted-light);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.72rem;
+      margin-right: 0.3rem;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 1.5rem 0.8rem 2.2rem;
+      }
+
+      .shell {
+        padding: 1.8rem 1.5rem 2rem;
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <article class="shell">
+      <a class="back-link" href="index.html">
+        <span class="arrow">←</span>
+        <span>Back to projects</span>
+      </a>
+
+      <h1 class="title">Soldering Station</h1>
+      <div class="meta">
+        Personal project · Custom station for Hakko FX-8801 iron · 200–500&nbsp;°C adjustable
+      </div>
+
+      <p class="summary">
+        A custom soldering station built to drive a soldering iron with accurate, adjustable
+        temperature control. I wanted something more robust and repairable than a cheap
+        off-the-shelf station, so I designed my own control electronics, enclosure, and user
+        interface around a standard Hakko iron.
+      </p>
+
+      <div class="meta-list">
+        <span class="label">TECH:</span>
+        Temperature sensing and calibration, PID control,
+        AC power electronics, Fusion360 CAD
+      </div>
+
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery">
+        <div>
+          <img src="images/soldering_station_3.jpg" alt="Soldering station interior" />
+          <div class="gallery-caption">Completed soldering station interior wiring.</div>
+        </div>
+        <div>
+          <img src="images/soldering_station4.jpeg" alt="Soldering station PCB" />
+          <div class="gallery-caption">Control PCB driving the heater and reading the temperature sensor.</div>
+        </div>
+        <div>
+          <img src="images/soldering_station5.jpg" alt="Small mistake" />
+          <div class="gallery-caption">First test--accidentally blew up a buck converter :(</div>
+        </div>
+
+        <!-- full-width wide image -->
+        <div class="gallery-full">
+          <img src="images/soldering_station1.jpg" alt="Soldering Iron Used" />
+          <div class="gallery-caption">Hakko FX-8801 iron.</div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Description</h2>
+      <p class="body-text">
+        I designed the electronics to safely deliver power to the iron while monitoring tip
+        temperature and maintaining a setpoint between roughly 200&nbsp;°C and 500&nbsp;°C.
+        This involved emperically measuring a resitance/temp curve (there was very little existing documentation), designing the
+        power stage to switch the heater (selected a large mains transformer), and implementing PID control to stabalize the temperature. A considerable amount of time
+        was spent tuning the PID parameters to get fast response.
+        <br /><br />
+        I also built the user interface: a simple front panel with controls and a display
+        that shows the current and target temperature. The 3D printed enclosure was designed for easy
+        access to the internals, so I can repair or modify the station as my needs change.
+      </p>
+    </article>
+  </div>
+</body>
+</html>
